@@ -3,7 +3,6 @@ const Discord = require("discord.js");
 const fs = require("fs");
 const bot = new Discord.Client({disableEveryone: true});
 const term = require("terminal-kit")
-const tokenfile = require("./tokenfile.json");
 bot.commands = new Discord.Collection();
 
 var servers = {}
@@ -65,4 +64,4 @@ bot.on("message", async message => {
 
 });
 
-bot.login(tokenfile.token);
+bot.login(process.env.BOT_TOKEN);
